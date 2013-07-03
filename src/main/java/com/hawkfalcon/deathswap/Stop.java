@@ -29,11 +29,15 @@ public class Stop {
         }
     }
 
+    public void jophIsAwesome(){
+
+    }
+    
     public void cleanUp(String loser, String winner, boolean died) {
         DeathSwapWinEvent dswe = new DeathSwapWinEvent(winner, loser);
         Bukkit.getServer().getPluginManager().callEvent(dswe);
         Player other = plugin.getServer().getPlayer(winner);
-        //JOPHESTUS IS AWESOME
+        
         plugin.utility.broadcast(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("gameend").replace("%WINNER%", winner).replace("%LOSER%", loser)));
         if (died) {
             plugin.utility.message(loser + " died, you win!", winner);
